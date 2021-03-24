@@ -1,0 +1,57 @@
+
+
+document.body.onload = (e) =>
+{
+  const newElement = (parent, type, id = false, clas = false, retur = true) =>
+  {
+    const ne = document.createElement(type);
+    if (id) ne.id = id;
+    if (clas) if (typeof clas !== "string") for (let c of clas) ne.classList.add(c);
+    else ne.classList.add(clas);
+    if (parent !== false) parent.appendChild(ne);
+    if (retur) return ne;
+  }
+  
+  const celsiusToFrh = (tmp) =>
+  {
+    return (tmp * 1.8) + 32;
+  }
+  
+  let isNum;
+  let inFrhTmp = 0.0;
+  let inCelTmp = 0.0;
+  do
+  {
+    inCelTmp = prompt("Inform the in C° temperature (only numbers):");
+    if (!isNaN(inCelTmp) && inCelTmp !== "")
+    {
+      isNum = true;
+      inFrhTmp = celsiusToFrh(parseFloat(inCelTmp));
+      // alert(`${typeof inFrhTmp} ${inFrhTmp}`);
+    }
+    else if (inCelTmp == "")
+    {
+      isNum = false;
+      alert("Please fill the prompt box with a number.")
+    }
+    else
+    {
+      isNum = false;
+      alert("Please inform a number.")
+    }
+  }
+  while (!isNum);
+  // const pgSub = document.body.querySelector(".page-subtitle");
+  // pgSub.innerHTML += `<br>The result of your convertion - from ${inCelTmp}C°- is: ${inFrhTmp}F°`;
+  
+  const d_rsp = newElement(document.body, "DIV", "D-000");
+  const d_rspS = d_rsp.style;
+  d_rspS.marginTop = "-42%";
+  d_rspS.marginRight = "3%";
+  d_rspS.width = "20%";
+  d_rspS.float = "right";
+  const h2_rsp = newElement(d_rsp, "H4", "H4-000");
+  const h2_rspS = h2_rsp.style;
+  h2_rspS.color = "#ff9ece";
+  h2_rsp.innerHTML = `<b>${parseFloat(inCelTmp).toFixed(1)}C° is equal to: ${inFrhTmp.toFixed(1)}F°.</b>`;
+}
