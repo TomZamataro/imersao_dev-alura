@@ -1,0 +1,72 @@
+document.body.onload = (e) =>
+{
+  const add = (x, y) =>
+  {
+    return x + y;
+  }
+  
+  const subtract = (x, y) =>
+  {
+    return x - y;
+  }
+  
+  const multiply = (x, y) =>
+  {
+    return x * y;
+  }
+  
+  const divide = (x, y) =>
+  {
+    return x / y;
+  }
+  // let opt;
+  // do
+  //   {
+  //     alert("Option List:\n" +
+  //           " > 1 ==> do another operation;\n" +
+  //           " > 2 ==> do nothing else.")
+  //     opt = prompt("Inform the option you wish to choose (number only):")
+  //   }
+  // while (opt == 1)
+  setTimeout(() =>
+            {
+  alert("Operation List:\n" +
+        " > + ==> Addtion;\n" +
+        " > - ==> Subtraction;\n" +
+        " > * ==> Multiplication;\n" +
+        " > / ==> Divison;\n" +
+        " > ** ==> Potentiation;\n" +
+        " > // ==> Square Root.");
+  let op = prompt("Inform the operation you want to execute, exactly as: (fist value) (operation simbole, listed previously) (last value)").split(" ");
+  const fstValue = parseFloat(op[0]);
+  const lstValue = parseFloat(op[2]);
+  op = op[1];
+  let result;
+  switch (op)
+  {
+    case "+":
+      result = add(fstValue, lstValue);
+      break;
+    case "-":
+      result = subtract(fstValue, lstValue);
+      break;
+    case "*":
+      result = multiply(fstValue, lstValue);
+      break;
+    case "/":
+      result = divide(fstValue, lstValue);
+      break;
+    case "**":
+      result = Math.pow(fstValue, lstValue);
+      break;
+    case "//":
+      result = Math.sqrt(fstValue, lstValue);
+      break;
+    default:
+      result = "Operation informed incorrectly.";
+      break;
+  }
+  if (typeof result !== "string") document.body.querySelector("h2").innerText = `${fstValue} ${op} ${lstValue} = ${result}`;
+    else document.body.querySelector("h2").innerText = result;
+  }, 50);
+}
