@@ -1,4 +1,6 @@
 ## ImersãoDev | Alura
 
-#### Challanges, projects, codes in general created on the "dive" - as described by the Alura devs.
-#### Separated by branches.
+### Class - 1, Challange - 1
+
+	Proposed challange (chosen one):
+Create a temperature unit converter, from Celsius (C°) to Fahrenheit (F°), using the html/css template given - making changes with wished so - and javascript for the imform of data, convertion and the result display. The input being catched by prompt, and the result being displayed in the "web" page, still via javascript.
