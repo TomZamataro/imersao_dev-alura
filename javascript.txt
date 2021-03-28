@@ -1,0 +1,55 @@
+const newElement = (parent, type, id = false, clas = false, retur = true) =>
+{
+  const ne = document.createElement(type);
+  if (id) ne.id = id;
+  if (clas) if (typeof clas !== "string") for (let c of clas) ne.classList.add(c);
+  else ne.classList.add(clas);
+  if (parent !== false) parent.appendChild(ne);
+  if (retur) return ne;
+}
+
+let movies = [{name: "Chappie",
+               img: "https://m.media-amazon.com/images/M/MV5BMTUyNTI4NTIwNl5BMl5BanBnXkFtZTgwMjQ4MTI0NDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt1823672/?ref_=nv_sr_srsg_0",
+               trailer: "https://www.imdb.com/video/imdb/vi704556569?playlistId=tt1823672&ref_=tt_ov_vi"},
+              {name: "Joker",
+               img: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt7286456/?ref_=nv_sr_srsg_0",
+               trailer: "https://www.imdb.com/video/imdb/vi1723318041?playlistId=tt7286456&ref_=tt_ov_vi"},
+              {name: "Need For Speed",
+               img: "https://m.media-amazon.com/images/M/MV5BMTQ3ODY4NzYzOF5BMl5BanBnXkFtZTgwNjI3OTE4MDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt2369135/?ref_=nv_sr_srsg_0",
+               trailer: "https://www.imdb.com/video/imdb/vi826058777?playlistId=tt2369135&ref_=tt_ov_vi"},
+              {name: "Pirates of the Catibbean: At World's End",
+               img: "https://m.media-amazon.com/images/M/MV5BMjIyNjkxNzEyMl5BMl5BanBnXkFtZTYwMjc3MDE3._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt0449088/?ref_=nv_sr_srsg_8",
+               trailer: "https://www.imdb.com/video/imdb/vi3821315609?playlistId=tt0449088&ref_=tt_ov_vi"},
+              {name: "Scott Pilgram vs. The World",
+               img: "https://m.media-amazon.com/images/M/MV5BZDM4Y2Q5ZDUtMTM0NS00YmEyLWFlMGQtYTYwODE3Y2RmMzUwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt0446029/?ref_=nv_sr_srsg_0",
+               trailer: "https://www.imdb.com/video/imdb/vi4036739097?playlistId=tt0446029&ref_=tt_ov_vi"},
+              {name: "The Perfection",
+               img: "https://m.media-amazon.com/images/M/MV5BMTA3NzkzMDUxODBeQTJeQWpwZ15BbWU4MDM0ODc5ODcz._V1_UX182_CR0,0,182,268_AL_.jpg",
+               link: "https://www.imdb.com/title/tt7772580/?ref_=nv_sr_srsg_0",
+               trailer: "https://www.imdb.com/video/imdb/vi3697589529?playlistId=tt7772580&ref_=tt_pr_ov_vi"},];
+const sec = document.body.querySelector(".idk");
+const h2_subt = document.body.querySelector(".page-subtitle");
+h2_subt.innerHTML = "Click on the images to see the trailer,<br>and on the name to go to the IMDb page of the movie."
+let a_trailer;
+let a_page;
+let name;
+let img;
+for (let m of movies)
+  {
+    d_ = newElement(sec, "DIV");
+    a_trailer = newElement(d_, "A");
+    img = newElement(a_trailer, "IMG");
+    a_page = newElement(d_, "A");
+    name = newElement(a_page, "H4");
+    a_trailer.setAttribute("href", `${m.trailer}`);
+    a_trailer.setAttribute("target", "_blank");
+    img.setAttribute("src", `${m.img}`);
+    a_page.setAttribute("href", `${m.link}`);
+    a_page.setAttribute("target", "_blank");
+    name.innerHTML = `<h2>${m.name}</h2>`;
+  }
