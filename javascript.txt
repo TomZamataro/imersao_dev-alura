@@ -1,0 +1,30 @@
+const newElement = (parent, type, id = false, clas = false, retur = true) =>
+{
+  const ne = document.createElement(type);
+  if (id) ne.id = id;
+  if (clas) if (typeof clas !== "string") for (let c of clas) ne.classList.add(c);
+  else ne.classList.add(clas);
+  if (parent !== false) parent.appendChild(ne);
+  if (retur) return ne;
+}
+
+const isImg = (str) =>
+{
+  if (str.endsWith(".jpg") || str.endsWith(".png")) return true;
+  return false;
+}
+
+document.body.querySelector("button").addEventListener("click", () =>
+                                                       {
+  const in_movieImg = document.body.querySelector("#filme");
+  const d_movieDisp = document.body.querySelector("#listaFilmes");
+  let img_;
+  if (isImg(in_movieImg.value))
+  {
+    img_ = newElement(d_movieDisp, "IMG");
+    img_.setAttribute("src", in_movieImg.value);
+    // d_movieDisp.innerHTML += `<img src = \"${in_movieImg.value}\">`;
+    in_movieImg.select();
+  }
+  else alert("The adress imformed is not a image, please imform a image.")
+});
