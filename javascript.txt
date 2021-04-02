@@ -1,0 +1,109 @@
+const newElement = (parent, type, id = false, clas = false, retur = true) =>
+{
+  const ne = document.createElement(type);
+  if (id) ne.id = id;
+  if (clas) if (typeof clas !== "string") for (let c of clas) ne.classList.add(c);
+  else ne.classList.add(clas);
+  if (parent !== false) parent.appendChild(ne);
+  if (retur) return ne;
+}
+
+const AddWin = (plyr, td_inQstn, td_pnts) =>
+{
+  td_inQstn.innerText = parseInt(td_inQstn.innerText) + 1;
+  plyr.wins++;
+  plyr.points = ClclPoints(plyr.wins, plyr.ties, plyr.losses);
+  td_pnts.innerText = plyr.points;
+}
+
+const AddTie = (plyr, td_inQstn, td_pnts) =>
+{
+  td_inQstn.innerText = parseInt(td_inQstn.innerText) + 1;
+  plyr.ties++;
+  plyr.points = ClclPoints(plyr.wins, plyr.ties, plyr.losses);
+  td_pnts.innerText = plyr.points;
+}
+
+const AddLoss = (plyr, td_inQstn, td_pnts) =>
+{
+  td_inQstn.innerText = parseInt(td_inQstn.innerText) + 1;
+  plyr.losses++;
+  plyr.points = ClclPoints(plyr.wins, plyr.ties, plyr.losses);
+  td_pnts.innerText = plyr.points;
+}
+
+const NewPlayer = (parent, plyr) =>
+{
+  const tr_ = newElement(parent, "TR");
+  const td_name = newElement(tr_, "TD");
+  const td_wins = newElement(tr_, "TD");
+  const td_ties = newElement(tr_, "TD");
+  const td_losses = newElement(tr_, "TD");
+  const td_points = newElement(tr_, "TD");
+  const td_actions = newElement(tr_, "TD");
+  const d_actions = newElement(td_actions, "DIV");
+  const b_win = newElement(d_actions, "BUTTON");
+  const b_tie = newElement(d_actions, "BUTTON");
+  const b_loss = newElement(d_actions, "BUTTON");
+  td_name.innerText = plyr.name;
+  td_wins.innerText = "0";
+  td_ties.innerText = "0";
+  td_losses.innerText = "0";
+  td_points.innerText = "0";
+  b_win.innerText = "Win";
+  b_win.addEventListener("click", () => {AddWin(plyr, td_wins, td_points)});
+  b_tie.innerText = "Tie";
+  b_tie.addEventListener("click", () => {AddTie(plyr, td_ties, td_points)});
+  b_loss.innerText = "Loss";
+  b_loss.addEventListener("click", () => {AddLoss(plyr, td_losses, td_points)});
+}
+
+const ClclPoints = (w, t, l) =>
+{
+  return w * 3 + t * 1 + l * -1;
+}
+
+function AddNewPlayer(name, plyrs, Player)
+{
+  plyrs.push(new Player(name));
+  RfrshTable(plyrs, tb_plyrs);
+}
+
+let plyrs = [new Player("Tom"), new Player("Camila")];
+const body = document.body;
+const tb_plyrs = body.querySelector("#tabelaJogadores");
+const in_newPlyr = body.querySelector("input");
+const b_newPlyr = body.querySelector("#addPlayer");
+b_newPlyr.addEventListener("click", () =>
+                           {
+  AddNewPlayer(in_newPlyr.value, plyrs, Player);
+  in_newPlyr.select();
+});
+
+function Player(name)
+{
+  this.name = name;
+  this.wins = 0;
+  this.ties = 0;
+  this.losses = 0;
+  this.points = 0;
+}
+
+function ClearTable(table)
+{
+  while (table.firstChild)
+    {
+      table.removeChild(table.lastChild);
+    }
+}
+
+function RfrshTable(plyrs, table)
+{
+  ClearTable(table)
+  for (let p of plyrs)
+  {
+    NewPlayer(tb_plyrs, p);
+  }
+}
+
+RfrshTable(plyrs, tb_plyrs);

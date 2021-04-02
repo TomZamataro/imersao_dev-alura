@@ -1,0 +1,123 @@
+
+* {
+    text-align: center;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    min-height: 400px;
+    color: #ff9ece;
+    background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png');
+    background-color: #663d73;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.page-title {
+    color: inherit;
+    margin: 0 0 5px;
+}
+
+.page-subtitle {
+    color: inherit;
+    margin-top: 5px;
+}
+
+.page-logo {
+    width: 200px;
+}
+
+.alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+table {
+    color: #ff9ece;
+    border: 2px solid #663d73;
+    border-collapse: collapse;
+}
+
+h1 {
+    color: inherit;
+}
+
+th, tr, td {
+    border: solid 2px #663d73;
+    color: #ff9ece;
+}
+
+button
+{
+  color: inherit;
+  background-color: #663d73;
+  font-family: "Courier New", monospace;
+  transition: .5s;
+  margin: 5px;
+}
+
+button:focus
+{
+  outline: none;
+}
+
+button:hover:not(#newPlayer button)
+{
+  opacity: .8;
+  outline: 4px ridge #8657f0;
+}
+
+.idk
+{
+  column-count: 3;
+}
+
+#newPlayer
+{
+  margin-top: 15px;
+}
+
+#newPlayer input
+{
+  padding: 10px 0px;
+  font-size: 15px;
+  font-family: "Courier New", monospace;
+  background-color: #663d73;
+  color: #ff9ece;
+  box-shadow: 0 0 4px 2px #fbff8b;
+  transition: .5s;
+}
+
+::placeholder
+{
+  font-family: "Courier New", monospace;
+  color: #ff9ece;
+  opacity: .6;
+}
+
+#newPlayer input:focus
+{
+  box-shadow: 0 0 0 2px #fbff8b;
+  outline: none;
+}
+
+#newPlayer button
+{
+  padding: 10px 5px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+#newPlayer button:hover
+{
+  box-shadow: 0 0 2px 4px #8657f0;
+}
