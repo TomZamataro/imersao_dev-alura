@@ -1,0 +1,16 @@
+function Copy(type)
+{
+	let txt;
+	if (type === "github") txt = "https://github.com/TomZamataro";
+	else if (type === "email") txt = "tomzamataro@gmail.com";
+	else txt = "5581993490769";
+	const e = document.createElement("TEXTAREA");
+	e.value = txt;
+	e.setAttribute("readonly", "");
+	e.style.position = "absolute";
+	e.style.left = "-9999px";
+	document.body.appendChild(e);
+	e.select()
+	document.execCommand("copy");
+	document.body.removeChild(e);
+}

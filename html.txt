@@ -1,0 +1,136 @@
+4<body>
+	<div id = "all">
+		<header>
+			<div id = "img">
+				<img src = "https://unavatar.now.sh/github/TomZamataro">
+			</div>
+			<section id = "contact-box">
+				<h1>Tom Zamataro da Fonseca</h1>
+				<nav id = "contact">
+					<h2>
+						<ul>
+							<li>
+								<span>🗃️ </span>
+								<a href = "https://github.com/TomZamataro" target = "_blank">
+									GitHub
+								</a>
+								<button id = "adjust-1" title = "click to copy my github link to your clipbord" onClick = 'Copy("github")'>
+									[TomZamataro]
+								</button>
+							</li>
+							<li>
+								<address>
+									<span>📧 </span>
+									<a href = "mailto:tomzamataro@gmail.com" target = "_blank">
+										Email
+									</a>
+									<button id = "adjust-2" title = "click to copy my email address to your clipbord"  onClick = 'Copy("email")'>
+										[tomzamataro@gmail.com]
+									</button>
+								</address>
+							</li>
+							<li>
+								<span>💼 </span>
+								<a href = "https://www.linkedin.com/in/tom-zamataro/" target = "_blank">
+									LinkedIn
+								</a>
+								<button id = "adjust-3" title = "click to copy my linkedin link to your clipbord" onClick = 'Copy("linIn")'>
+									[LinkedIn]
+								</button>
+							</li>
+							<li>
+								<span>📞 </span>
+								<a href = "tel:5581993490769" target = "_blank">
+									Phone
+								</a>
+								<button id = "adjust-4" title = "click to copy my phone number to your clipbord"  onClick = 'Copy("tel")'> 
+									[+55 (81)99349-0769]
+								</button>
+							</li>
+						</ul>
+					</h2>
+				</nav>
+			</section>
+		</header>
+		<article>
+			<h2>Badges Imersão.dev|alura </h2>
+			<h3>
+				<a href = "https://github.com/TomZamataro/imersao_dev-alura" target = "_blank">
+					[GitHub Repository]
+				</a>
+			</h3>
+			<nav id = "challanges">
+				<h4>
+					<ol>
+						<li>
+							<span>💰 Temperature Converter</span>
+							<a href = "https://github.com/TomZamataro/imersao_dev-alura/tree/CH%231" target = "_blank">
+								 [GitHub Repo.]
+							</a>
+							<span>//</span>
+							<a href = "https://codepen.io/lifrey/full/xxgxPYP" target = "_blank">
+								[Pen]
+							</a>
+						</li>
+						<li>
+							<span>🔢 Calculator</span>
+							<a href = "https://github.com/TomZamataro/imersao_dev-alura/tree/CH%232" target = "_blank">
+								 [GitHub Repo.]
+							</a>
+							<span>//</span>
+							<a href = "https://codepen.io/lifrey/full/KKapzXR" target = "_blank">
+								[Pen]
+							</a>
+						</li>
+						<li>
+							<span>🔮 Mentalist [Coming Soon]</span>	
+						</li>
+						<li>
+							<span>🎬 AluraFlix</span>
+							<h5>
+								<ul>
+									<li>
+										<span>Class/Challange - 4 </span>
+										<a href = "https://github.com/TomZamataro/imersao_dev-alura/tree/CH%234" target = "_blank">
+											[GitHub Repo.]
+										</a>
+										<span>//</span>
+										<a href = "https://codepen.io/lifrey/full/GRrqoEO" target = "_blank">
+											[Pen]
+										</a>
+									</li>
+									<li>
+										<span>Class/Challange - 5 </span>
+										<a href = "https://github.com/TomZamataro/imersao_dev-alura/tree/CH%235" target = "_blank">
+											[GitHub Repo.]
+										</a>
+										<span>//</span>
+										<a href = "https://codepen.io/lifrey/full/zYNNjWM" target = "_blank">
+											[Pen]
+										</a>
+									</li>
+								</ul>
+							</h5>
+						</li>
+						<li>
+							<span>🏆 Classification Table</span>
+							<a href = "https://github.com/TomZamataro/imersao_dev-alura/tree/CH%236" target = "_blank">
+								 [GitHub Repo.]
+							</a>
+							<span>//</span>
+							<a href = "https://codepen.io/lifrey/full/RwKpVGG" target = "_blank">
+								[Pen]
+							</a>
+						</li>
+						<li>
+							<span>🃏 Super Trunfo [Coming Soon]</span>
+						</li>
+						<li>
+							<span>🌐 Certificard [You're in it]</span>	
+						</li>
+					</ol>
+				</h4>
+			</nav>
+		</article>
+	</div>
+</body>
