@@ -32,6 +32,21 @@ const AddLoss = (plyr, td_inQstn, td_pnts) =>
   td_pnts.innerText = plyr.points;
 }
 
+function DeletePlayer(parent, plyr, pName)
+{
+  let pObj;
+  for (let p of plyrs)
+    {
+      if (p.name === pName)
+        {
+          pObj = p;
+          break;
+        }
+    }
+  plyrs.splice(plyrs.indexOf(pObj), 1)
+  parent.removeChild(plyr);
+}
+
 const NewPlayer = (parent, plyr) =>
 {
   const tr_ = newElement(parent, "TR");
@@ -45,6 +60,7 @@ const NewPlayer = (parent, plyr) =>
   const b_win = newElement(d_actions, "BUTTON");
   const b_tie = newElement(d_actions, "BUTTON");
   const b_loss = newElement(d_actions, "BUTTON");
+  const b_del = newElement(d_actions, "BUTTON");
   td_name.innerText = plyr.name;
   td_wins.innerText = "0";
   td_ties.innerText = "0";
@@ -56,6 +72,8 @@ const NewPlayer = (parent, plyr) =>
   b_tie.addEventListener("click", () => {AddTie(plyr, td_ties, td_points)});
   b_loss.innerText = "Loss";
   b_loss.addEventListener("click", () => {AddLoss(plyr, td_losses, td_points)});
+  b_del.innerText = "Delete";
+  b_del.addEventListener("click", () =>{DeletePlayer(parent, tr_, td_name.innerText)});
 }
 
 const ClclPoints = (w, t, l) =>
