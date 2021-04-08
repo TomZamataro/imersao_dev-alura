@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>
+        Imersão Dev - Aula 03
+    </title>
+</head>
+
+<body>
+    <div class="container">
+      <div class = "wrapper">
+        <h1 class="page-title">
+          The Mentalist
+        </h1>
+      </div>
+      <div class = "wrapper">
+        <h4 class="page-subtitle">
+          Try to guess the number,<br> between the range that you're going to inform.
+        </h4>
+      </div>
+      <section id = "input-box">
+        <div class = "wrapper">
+          <h4 id = "H4-000">
+            Inform the range you want to guess the number from.<br>
+            Both numbers need to be positives and integers.
+          </h4>
+        </div>
+        <input autocomplete = "off" id = "IN-000" placeholder = "as: (minimum) (maximum)">
+        <button onClick = "NextStep()" id = "B-000">
+          Next Step
+        </button>
+      </section>
+      <div class = "wrapper">
+        <h4 id = "H4-001">...</h4>
+      </div>
+      <div class = "wrapper">
+        <h4 id = "H4-002">...</h4>
+      </div>
+      <img src="https://imgur.com/F2RsJgk.png" class="page-logo"
+           alt="">
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+</body>
+
+</html>

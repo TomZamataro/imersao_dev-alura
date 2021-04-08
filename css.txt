@@ -1,0 +1,122 @@
+body {
+    font-family: 'Courier New',monospace;
+    color: #663d73;
+    background-color: #ff9ece;
+    min-height: 600px;
+    background-image: url('https://imgur.com/B2pIf8a.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .page-title {
+    color: #inrerit;
+    font-weight: 900;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    font-weight: 900;
+    color: #inherit;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right:10px;
+  }
+
+:root
+{
+  --bgcolor: #663d73;
+  --color: #ff9ece;
+  --detail: #fbff8b;
+  --tmp: #8657f0;
+}
+
+input
+{
+  color: var(--color);
+  background-color: var(--bgcolor);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 250px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid var(--detail);
+  box-shadow: 0 0 15px 10px var(--bgcolor);
+  transition: .5s;
+}
+
+:focus
+{
+  outline: none;
+}
+
+input:focus
+{
+  padding: 7px 12px;
+  border: 3px solid var(--tmp);
+}
+
+input::placeholder
+{
+  color: var(--color);
+  text-align: center;
+  opacity: .8;
+}
+
+button
+{
+  color: var(--color);
+  background-color: var(--bgcolor);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid var(--detail);
+  box-shadow: 0 0 15px 10px var(--bgcolor);
+  transition: .5s;
+}
+
+button:hover
+{
+  padding: 7px 12px;
+  opacity: .9;
+  border: 3px solid var(--tmp);
+}
+
+h4
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  padding: 5px 10px;
+  color: var(--color);
+  background-color: var(--bgcolor);
+  border-radius: 10px;
+  border: 2px solid var(--detail);
+  box-shadow: 0 0 15px 10px var(--bgcolor);
+}
+
+  @media (max-height: 500px) {
+    body {
+      min-height:800px;
+    }
+  }
